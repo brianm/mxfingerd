@@ -20,7 +20,7 @@ Running:
 
 Queries, if daemon is running on the server "bang", look like:
 
--- list all mbeans on z101103
+-- list all mbeans on javathing.com 
 $ finger @javathing.com@mxfingerdhost.com
 
 -- all attributes on the org.skife.wombat:name=FuzzyThing mbean on javathing.com
