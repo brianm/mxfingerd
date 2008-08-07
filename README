@@ -26,7 +26,7 @@ $ finger @javathing.com@mxfingerdhost.com
 -- all attributes on the org.skife.wombat:name=FuzzyThing mbean on javathing.com
 $ finger org.skife.wombat:name=FuzzyThing@javathing.com@mxfingerdhost.com
 
--- ResponseCacheEnabled attribute on the ning.imaging.rest:name=ImagingServer 
+-- ResponseCacheEnabled attribute on the org.skife.wombat:name=FuzzyThing
 -- mbean on javathing.com
 $ finger org.skife.wombat:name=FuzzyThing#ResponseCacheEnabled@javathing.com@mxfingerdhost.com
 
