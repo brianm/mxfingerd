@@ -1,0 +1,38 @@
+Building:
+    Install Maven 2 from http://maven.apache.org/
+
+    run
+        $ mvn assembly:assembly
+
+    This will create target/mxfingerd-1.0-jar-with-dependencies.jar
+
+
+Running:
+    As root (bad idea, but hey!)
+        $ sudo java -jar target/mxfingerd-1.0-jar-with-dependencies.jar
+
+    As non-root
+        $ java -jar target/mxfingerd-1.0-jar-with-dependencies.jar
+
+    When run as root it will bind to port 79
+    When run as non root it will bind to 7979
+        You will need to forward port 7979 to 79 for finger client
+
+Queries, if daemon is running on the server "bang", look like:
+
+-- list all mbeans on z101103
+$ finger @javathing.com@mxfingerdhost.com
+
+-- all attributes on the org.skife.wombat:name=FuzzyThing mbean on javathing.com
+$ finger org.skife.wombat:name=FuzzyThing@javathing.com@mxfingerdhost.com
+
+-- ResponseCacheEnabled attribute on the ning.imaging.rest:name=ImagingServer 
+-- mbean on javathing.com
+$ finger org.skife.wombat:name=FuzzyThing#ResponseCacheEnabled@javathing.com@mxfingerdhost.com
+
+If no port is specified on javathing.com it will try to connect to 8989, 
+alternately you can specify a port, a la
+
+$ finger @javathing.com:3000@mxfingerdhost.com
+
+There is nothing for auth at this point.
